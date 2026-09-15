@@ -21,7 +21,7 @@ const FAQ = () => {
             <button onClick={() => setOpen(open === index ? null : index)} 
             className="flex w-full items-center justify-between px-4 py-5">
               <span className="text-lg text-[#111827] font-semibold">{item.question}</span>
-              <span className="w-6 h-6">{open === index ? "−" : "+"}</span>
+              <span className="cursor-pointer">{open === index ? "−" : "+"}</span>
             </button>
 
             {open === index && (
