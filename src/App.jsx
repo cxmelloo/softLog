@@ -2,7 +2,7 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import Home from "./pages/Home";
 import RouteLayout from "./layout/RouteLayout";
 import Contact from "./pages/Contact";
-import Blog from "./pages/Blog";
+import Blog from "./Blog/Blog";
 
 function App() {
   const route = createBrowserRouter(
