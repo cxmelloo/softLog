@@ -1,4 +1,4 @@
-import filterImg from '../List/Filter.svg'
+import filterImg from './Filter.svg'
 import ListItems from './ListItems';
 
 function Lists() {

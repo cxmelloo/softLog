@@ -1,4 +1,4 @@
-import ListImg from '../List/ListImg.svg'
+import ListImg from './ListImg.svg'
 
 function ListItems() {
   const items = Array.from({ length: 12 }, (_, index) => ({

@@ -1,4 +1,4 @@
-import Img from '../Related/arrow.svg'
+import Img from './arrow.svg'
 
 function RelateList() {
   const items = Array.from({ length: 6 }, (_, index) => ({
