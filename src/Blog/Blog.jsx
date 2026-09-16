@@ -1,6 +1,7 @@
 import Hero from "../components/Hero";
 import Products from "../components/Products";
 import Review from "../components/Review";
+import Selling from "../components/Selling";
 import Listings from "../List/Listings";
 
 function Blog() {
@@ -12,6 +13,7 @@ function Blog() {
     <Listings/>
     <Review/>
     <Products/>
+    <Selling/>
     </>
   )
 }
