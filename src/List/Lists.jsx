@@ -15,7 +15,7 @@ function Lists() {
           </div>
           <ListItems/>
 
-          <button className='white-btn mt-20 block mx-auto'>Load more</button>
+          <button className='white-btn mt-10 md:mt-20 block mx-auto'>Load more</button>
         </div>
     </section>
     </>
