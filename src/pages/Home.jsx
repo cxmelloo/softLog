@@ -8,12 +8,13 @@ import Relate from "../Related/Relate";
 function Home() {
 return (
   <>
-    <Hero/>
+    <Hero title='CRM software' desc="Accounting software automates an organization's financial functions and transactions with modules including accounts payable, accounts receivable, payroll, billing and general ledger."/>
     <Lists/>
     <Relate/>
     <FAQ/>
     <Review/>
     <Title/>
+    <Review/>
     </>
 )
 } 

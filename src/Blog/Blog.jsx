@@ -1,8 +1,15 @@
+import Hero from "../components/Hero";
+import Review from "../components/Review";
+import Listings from "../List/Listings";
+
 function Blog() {
   return (
     <>
-    <h1>Read our BLOG</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, rerum aliquid sed asperiores error animi porro temporibus nobis consequuntur iste culpa aut perspiciatis at ut neque. Explicabo modi magni voluptatem asperiores dolores, maiores in cum laborum consectetur. Necessitatibus pariatur dignissimos, expedita adipisci molestias, libero sit repellat in, officiis delectus animi?</p>
+    <Hero 
+      title='This is a blog overview title' 
+      desc="You will be overwhelmed by the choices of software available on the market these days. One helpful resource is a software review blog, which provides detailed reviews and recommendations to make it easier for you to find the right software for your need."/>
+    <Listings/>
+    <Review/>
     </>
   )
 }

@@ -1,7 +1,7 @@
+import BlogList from '../Blog/BlogList';
 import filterImg from './Filter.svg'
-import ListItems from './ListItems';
 
-function Lists() {
+function Listings() {
   return (
     <>
     <section className='py-17'>
@@ -13,13 +13,17 @@ function Lists() {
           <img src={filterImg} alt="filter img"/>
         </button>
           </div>
-          <ListItems/>
+          <BlogList/>
+          <br />
+          <BlogList/>
+          <br />
+          <BlogList/>
 
-          <button className='white-btn mt-20 block mx-auto'>Load more</button>
+          <button className='white-btn mt-10 md:mt-20 block mx-auto'>Load more</button>
         </div>
     </section>
     </>
   )
 }
 
-export default Lists
+export default Listings
