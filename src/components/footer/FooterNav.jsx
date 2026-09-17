@@ -1,66 +1,98 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 function FooterNav() {
+  const [open, setOpen] = useState(null);
+
+  const sections = [
+    { title: "Product",
+      links: [
+        { label: "Categories", to: "/categories" },
+        { label: "Write a review", to: "/review" },
+        { label: "Claim your profile", to: "/profile" },
+      ],
+    }, { title: "Company",
+      links: [
+        { label: "About us", to: "/about" },
+        { label: "Press", to: "/press" },
+        { label: "Media kit", to: "/media" },
+        { label: "Contact", to: "/contact" },
+      ],
+    }, { title: "Social",
+      links: [
+        { label: "Twitter", to: "https://x.com/TeamMessi?lang=en", external: true},
+        { label: "LinkedIn", to: "https://www.linkedin.com/in/lionel-andr%C3%A9s-messi-cuccitini-70012932a",external: true},
+        { label: "Facebook", to: "https://www.facebook.com/leomessi", external: true},
+        { label: "Instagram", to: "https://www.instagram.com/leomessi/", external: true},
+        { label: "Youtube", to: "https://www.youtube.com/@LeoMessi", external: true,},
+      ],
+    }, {
+      title: "Resources",
+      links: [
+        { label: "Blog", to: "/blog" },
+        { label: "Newsletter", to: "/letter" },
+        { label: "Support", to: "/support" },
+        { label: "Sitemap", to: "/sitemap" },
+      ],
+    }, {
+      title: "Legal",
+      links: [
+        { label: "Terms", to: "/terms" },
+        { label: "Privacy", to: "/privacy" },
+        { label: "Cookies", to: "/cookies" },
+      ],
+    },
+  ];
+
+  const toggleSection = (index) => {
+    setOpen(open === index ? null : index);
+  };
+
   return (
-    <nav className="flex flex-wrap items-start gap-5 mb-10">
-      <ul className="grid min-w-53 gap-2">
-        <li className="mb-6 font-semibold text-2xl">Product</li>
-        <li className="c-nav"><NavLink to="/categories">Categories</NavLink></li>
-        <li className="c-nav"><NavLink to="/review">Write a review</NavLink></li>
-        <li className="c-nav"><NavLink to="/profile">Claim your profile</NavLink></li>
-      </ul>
+    <nav>
+      <div className="hidden md:flex flex-wrap items-start gap-5 mb-10">
+        {sections.map((section) => (
+          <ul key={section.title} className="grid min-w-53 gap-2">
+            <li className="mb-6 font-semibold text-2xl">{section.title}</li>
 
-      <ul className="grid min-w-53 gap-2">
-        <li className="mb-6 font-semibold text-2xl">Company</li>
-        <li className="c-nav"><NavLink to="/about">About us</NavLink></li>
-        <li className="c-nav"><NavLink to="/press">Press</NavLink></li>
-        <li className="c-nav"><NavLink to="/media">Media kit</NavLink></li>
-        <li className="c-nav"><NavLink to="/contact">Contact</NavLink></li>
-      </ul>
+            {section.links.map((link) => (
+              <li key={link.label} className="c-nav">
+                {link.external ? (
+                  <a href={link.to} target="_blank" rel="noreferrer">{link.label}</a>
+                ) : (
+                  <NavLink to={link.to}>{link.label}</NavLink>
+                )}
+              </li>
+            ))}
+          </ul>
+        ))}
+      </div>
 
-      <ul className="grid min-w-53 gap-2">
-        <li className="mb-6 font-semibold text-2xl">Social</li>
-        <li className="c-nav">
-          <a href="https://x.com/TeamMessi?lang=en" target="_blank" rel="noreferrer">
-            Twitter
-          </a>
-        </li>
-        <li className="c-nav">
-          <a href="https://www.linkedin.com/in/lionel-andr%C3%A9s-messi-cuccitini-70012932a" target="_blank" rel="noreferrer">
-            LinkedIn
-          </a>
-        </li>
-        <li className="c-nav">
-          <a href="https://www.facebook.com/leomessi" target="_blank" rel="noreferrer">
-            Facebook
-          </a>
-        </li>
-        <li className="c-nav">
-          <a href="https://www.instagram.com/leomessi/" target="_blank" rel="noreferrer">
-            Instagram
-          </a>
-        </li>
-        <li className="c-nav">
-          <a href="https://www.youtube.com/@LeoMessi" target="_blank" rel="noreferrer">
-            Youtube
-          </a>
-        </li>
-      </ul>
+      <div className="md:hidden mb-10">
+        {sections.map((section, index) => (
+          <div key={section.title} className="border-b-2 border-[#E5E7EB]">
 
-      <ul className="grid min-w-53 gap-2">
-        <li className="mb-6 font-semibold text-2xl">Resources</li>
-        <li className="c-nav"><NavLink to="/blog">Blog</NavLink></li>
-        <li className="c-nav"><NavLink to="/letter">Newsletter</NavLink></li>
-        <li className="c-nav"><NavLink to="/support">Support</NavLink></li>
-        <li className="c-nav"><NavLink to="/sitemap">Sitemap</NavLink></li>
-      </ul>
+            <button type="button" onClick={() => toggleSection(index)} className="flex w-full items-center justify-between py-5">
+              <span className="text-xl font-semibold">{section.title}</span>
+              <span className="text-2xl font-normal">{open === index ? "−" : "+"}</span>
+            </button>
 
-      <ul className="grid min-w-53 gap-2">
-        <li className="mb-6 font-semibold text-2xl">Legal</li>
-        <li className="c-nav"><NavLink to="/terms">Terms</NavLink></li>
-        <li className="c-nav"><NavLink to="/privacy">Privacy</NavLink></li>
-        <li className="c-nav"><NavLink to="/cookies">Cookies</NavLink></li>
-      </ul>
+            {open === index && (
+              <ul className="grid gap-3 pb-5">
+                {section.links.map((link) => (
+                  <li key={link.label} className="c-nav">
+                    {link.external ? (
+                      <a href={link.to} target="_blank" rel="noreferrer">{link.label}</a>
+                    ) : (
+                      <NavLink to={link.to}>{link.label}</NavLink>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        ))}
+      </div>
     </nav>
   );
 }
