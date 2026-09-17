@@ -3,12 +3,14 @@ import Home from "./pages/Home";
 import RouteLayout from "./layout/RouteLayout";
 import Contact from "./pages/Contact";
 import Blog from "./Blog/Blog";
+import Categories from "./pages/Categories";
 
 function App() {
   const route = createBrowserRouter(
     createRoutesFromElements(
       <Route element={<RouteLayout/>}>
         <Route path="/" element={<Home/>}/>
+        <Route path="categories" element={<Categories/>}/>
         <Route path="blog" element={<Blog/>}/>
         <Route path="contact" element={<Contact/>}/>
       </Route>

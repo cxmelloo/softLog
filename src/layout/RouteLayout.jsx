@@ -2,6 +2,7 @@ import {Link, Outlet} from 'react-router-dom'
 import Logo from '../assets/Logo.svg'
 import Navbar from '../components/Navbar';
 import Menu from '../assets/Menu.svg'
+import Footer from '../components/footer/Footer';
 
 function RouteLayout() {
   return (
@@ -22,7 +23,7 @@ function RouteLayout() {
     <main>
       <Outlet/>
     </main>
-    <footer>footer</footer>
+    <Footer/>
     </>
   )
 }

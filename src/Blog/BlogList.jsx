@@ -1,5 +1,5 @@
-import pfp from '../Blog/pfp.png'
-import BlogImg from '../Blog/BlogImg.svg'
+import pfp from './pfp.png'
+import BlogImg from './BlogImg.svg'
 
 function BlogList() {
   const items = Array.from({ length: 4 }, (_, index) => ({
