@@ -70,7 +70,7 @@ function FooterNav() {
 
       <div className="md:hidden mb-10">
         {sections.map((section, index) => (
-          <div key={section.title} className="border-b-2 border-[#E5E7EB]">
+          <div key={section.title} className="border-2 mb-2 px-3 rounded-xl border-[#D1D5DB]">
 
             <button type="button" onClick={() => toggleSection(index)} className="flex w-full items-center justify-between py-5">
               <span className="text-xl font-semibold">{section.title}</span>
