@@ -27,7 +27,7 @@ function Products() {
 
             <div className='flex gap-2'>
               <p className='font-semibold'>⭐ {item.rating}</p>
-              <p className='text-[#2563EB] border-b border-[#2563EB]'>{item.review}</p>
+              <p className='text-[#2563EB] border-b border-[#2563EB]'>({item.review})</p>
             </div>
             </div>
           </div>
